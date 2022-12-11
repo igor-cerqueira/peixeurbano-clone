@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="secao">
+    <h3 class="text-center">Destaques do dia!</h3>
+    <h5 class="text-center">Aproveite as super ofertas que separamos para você:</h5>
+  </div>
+
+  <hr />
+
+  <div class="row" style="padding-bottom: 50px;">
+    <div class="col-sm-4" *ngFor="let oferta of ofertas" >
+      <div class="card">
+        <img class="card-img-top" [src]="oferta.imagens[0].url">
+        <div class="card-block" style="margin: 10px;">
+          <h4 class="card-title">{{ oferta.titulo }}</h4>
+          <p class="card-text">{{ oferta.descricao_oferta }}</p>
+          <p class="preco"> R$ {{ oferta.valor }}</p>
+          <a [routerLink]="['/oferta', oferta.id]"class="btn btn-outline-primary">Ver oferta</a>
+          <!-- o link foi feito propertie bind para que se pudesse adicionar os parametros e acessar as paginas pelo id, já que possui um ngFor basta acessar o id atravez da variavel do ngFor. os parametros sao um array, para isso basta emcapsular em [] -->
+        </div>
+      </div>
+    </div>
+</div>
