@@ -1,10 +1,11 @@
 import { URL_API } from './../app.api';
-import { Oferta } from "./shared/oferta.model"
+import { Oferta } from "./shared/oferta.model";
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 
-import { firstValueFrom } from 'rxjs';
-import { AppModule } from "./app.module"
+import { firstValueFrom, Observable } from 'rxjs';
+import { map, retry } from 'rxjs/operators';
+import { AppModule } from "./app.module";
 
 @Injectable()
 export class OfertasService {
@@ -49,5 +50,13 @@ export class OfertasService {
       // console.log(resposta[0].descricao)
       return resposta[0].descricao
     })
+  }
+
+  pesquisaOfertas(termo: string): Observable<Oferta[]> {
+    return this.http.get(`${URL_API}ofertas?descricao_oferta_like=${termo}`)
+      .pipe(
+        map((resposta: any) => resposta),
+        retry(10)
+      )
   }
 }
