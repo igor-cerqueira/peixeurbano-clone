@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Oferta } from '../shared/oferta.model';
 import { OfertasService } from '../ofertas.service';
 import { interval, Observable, Observer, Subscription } from 'rxjs';
@@ -27,11 +27,15 @@ export class OfertaComponent implements OnInit, OnDestroy {
     // é dessa forma que recuperamos com o método snapshot os parametros contidos na rota ativa da nossa aplicação. o snapshot ele tira uma foto do que está acontecendo ou seja se houver alteração ele nao irá atualizar
     // console.log('ID recuoerado da rota:', this.route.snapshot.params['id'])
 
-    this.ofertasService.getOfertaPorId(this.route.snapshot.params['id'])
-      .then(( oferta: Oferta ) => {
-        // console.log(oferta)
-        this.oferta = oferta
-      })
+    this.route.params.subscribe((paramatros: Params) => {
+
+      this.ofertasService.getOfertaPorId(paramatros['id'])
+        .then(( oferta: Oferta ) => {
+          this.oferta = oferta
+          // console.log(oferta)
+        })
+    })
+
 
     // é dessa forma que recuperamos com método de subscribe os parametros conttidos na rota ativa. A diferença é que o subscribe irá ficar observando toda e qualquer mudança que venha a acontecer
     // this.route.params.subscribe((parametro: any) => {

@@ -14,6 +14,8 @@ import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { registerLocaleData } from "@angular/common";
 import localePt from "@angular/common/locales/pt";
+import { SharedPipe } from './shared/shared.pipe';
+import { DescricaoReduzida } from './shared/descricao-reduzida.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import localePt from "@angular/common/locales/pt";
     RestaurantesComponent,
     OfertaComponent,
     ComoUsarComponent,
-    OndeFicaComponent
+    OndeFicaComponent,
+    SharedPipe,
+    DescricaoReduzida
   ],
   imports: [
     BrowserModule,
