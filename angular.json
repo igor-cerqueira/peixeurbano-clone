@@ -35,7 +35,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "../peixe_urbano_clone/node_modules/tether/dist/js/tether.min.js",
+              "../peixe_urbano_clone/node_modules/popper.js/dist/umd/popper.min.js",
               "../peixe_urbano_clone/node_modules/jquery/dist/jquery.min.js",
               "../peixe_urbano_clone/node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
