@@ -18,7 +18,9 @@ import { SharedPipe } from './shared/shared.pipe';
 import { DescricaoReduzida } from './shared/descricao-reduzida.pipe';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    // FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'pt' } ],
   bootstrap: [AppComponent]

@@ -227,6 +227,41 @@
       "complemento": "casa teste",
       "formaPagamento": "dinheiro",
       "id": 6
+    },
+    {
+      "endereco": "Rua naria das Flores",
+      "numero": "155",
+      "complemento": "casa 2",
+      "formaPagamento": "dinheiro",
+      "id": 7
+    },
+    {
+      "endereco": "teste",
+      "numero": "21",
+      "complemento": "casa a",
+      "formaPagamento": "debito",
+      "id": 8
+    },
+    {
+      "endereco": "teste",
+      "numero": "34",
+      "complemento": "sad",
+      "formaPagamento": "dinheiro",
+      "id": 9
+    },
+    {
+      "endereco": "rua teste",
+      "numero": "43",
+      "complemento": null,
+      "formaPagamento": "dinheiro",
+      "id": 10
+    },
+    {
+      "endereco": "teste final",
+      "numero": "23",
+      "complemento": "gama",
+      "formaPagamento": "debito",
+      "id": 11
     }
   ]
 }
