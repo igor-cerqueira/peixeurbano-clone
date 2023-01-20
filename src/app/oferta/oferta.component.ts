@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Oferta } from '../shared/oferta.model';
 import { OfertasService } from '../ofertas.service';
 import { interval, Observable, Observer, Subscription } from 'rxjs';
+import { CarrinhoService}  from '../carrinho.service'
 
 
 @Component({
@@ -20,7 +21,8 @@ export class OfertaComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private ofertasService: OfertasService
+    private ofertasService: OfertasService,
+    private carrinhoService: CarrinhoService
     ) { }
 
   ngOnInit(): void {
@@ -55,7 +57,7 @@ export class OfertaComponent implements OnInit, OnDestroy {
     //   console.log(intervalo)
     // })
 
-    // exepplo de ciclo de uma stram:
+    // exemplo de ciclo de uma stream:
     // observable (observável)
     // let meuObservable = Observable.create((observer: Observer<number>) => {
     //   observer.next(1)
@@ -72,6 +74,7 @@ export class OfertaComponent implements OnInit, OnDestroy {
     //   () => console.log('eventro de stream finalizada')
     // )
     // primeira função será para o andamento, a segunda em caso de eventual erro, a terceira a conclusão
+
   }
 
   ngOnDestroy(): void {
@@ -79,4 +82,10 @@ export class OfertaComponent implements OnInit, OnDestroy {
     // this.tempoObservableSubscription.unsubscribe()
   }
 
+
+  adicionarItemCarrinho():void{
+    this.carrinhoService.incluirItem(this.oferta)
+
+    console.log(this.carrinhoService.exibirItens())
+  }
 }

@@ -18,7 +18,7 @@ export class DiversaoComponent implements OnInit {
     this.ofertasService.getOfertasPorCategoria('diversao')
       .then((ofertas: Oferta[]) => {
         this.ofertas = ofertas
-        console.log(ofertas)
+        // console.log(ofertas)
       })
   }
 

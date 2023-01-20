@@ -1,3 +1,4 @@
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,10 +17,10 @@ import { registerLocaleData } from "@angular/common";
 import localePt from "@angular/common/locales/pt";
 import { SharedPipe } from './shared/shared.pipe';
 import { DescricaoReduzida } from './shared/descricao-reduzida.pipe';
-import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
 // import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CarrinhoService } from './carrinho.service';
 
 
 @NgModule({
@@ -35,17 +36,18 @@ import { ReactiveFormsModule } from '@angular/forms';
     OndeFicaComponent,
     SharedPipe,
     DescricaoReduzida,
-    OrdemCompraComponent,
-    OrdemCompraSucessoComponent
+    OrdemCompraSucessoComponent,
+    OrdemCompraComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     // FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [ { provide: LOCALE_ID, useValue: 'pt' } ],
+  providers: [ CarrinhoService, { provide: LOCALE_ID, useValue: 'pt' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,5 @@
+import { ItemCarrinho } from "./item-carrinho.model"
+
 export class Pedido {
   // constructor (
   //   endereco: string,
@@ -10,6 +12,7 @@ export class Pedido {
   numero!: string
   complemento!: string
   formaPagamento!: string
+  itens!: Array<ItemCarrinho>
 
 
 }
